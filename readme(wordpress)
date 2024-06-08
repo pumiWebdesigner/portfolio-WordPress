@@ -1,21 +1,25 @@
-□ガルプ準備
-・devフォルダを作成し、そこに、以下を格納
+
+・devフォルダを作成し、以下を格納
 　package.json
 　gulpfile.js
+　srcフォルダ
+
 ・ターミナルで以下を実行
 　cd dev
 　npm installを実行
 
-□build処理
-・srcフォルダを作成し、以下を格納
-　sass
-　js
-　img
-　　※PHPファイルはホームディレクトリに配置
-・gulp.jsの各出力先を以下に設定
-　dest("../css")
-　　./public/assets → ../　に置換する
-   gulpfile.jsを起点にパスを決める
+; ・srcフォルダを作成し、以下を格納
+; 　sass
+; 　js
+; 　img
+
+・gulp.jsの内容を置換
+　　./public/ → ../
+　　/css/ → /
+　　　※gulpfile.jsを起点にパスを決める
+
+; 　dest("../css")
+; 　　./public/assets → ../　に置換する
 ・ターミナルで以下を実行
 　npm gulp build
 

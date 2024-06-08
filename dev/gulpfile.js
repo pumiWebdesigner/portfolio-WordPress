@@ -40,10 +40,10 @@ async function copyImage() {
     gulp
       .src("./src/assets/img/**/*")
       //そのままの画像も格納
-      .pipe(gulp.dest("./public/assets/img/"))
+      .pipe(gulp.dest("../assets/img/"))
       //extname: ファイルの拡張子を取得,toLowerCase: 小文字に変換,拡張子が対象の拡張子に含まれているか確認
       .pipe(gulpIf((file) => webpExtensions.includes(file.extname.toLowerCase()), webp()))
-      .pipe(gulp.dest("./public/assets/img/"))
+      .pipe(gulp.dest("../assets/img/"))
       .on("error", (err) => {
         console.error("gulp-webpがエラーです", err);
       })
@@ -56,14 +56,14 @@ function compileSass() {
     .pipe(sass()) //sassコンパイルを実行
     .pipe(postcss([autoprefixer(), cssSorter()])) // ベンダープレフィックスを付加して、プロパティをソート
     .pipe(mmq()) // メディアクエリをまとめる
-    .pipe(gulp.dest("./public/assets/css/")) // 圧縮前ファイルを一旦出力ディレクトリに書き出し
+    .pipe(gulp.dest("../assets/")) // 圧縮前ファイルを一旦出力ディレクトリに書き出し
     .pipe(cleanCss()) // cssの圧縮処理
     .pipe(
       rename({
         suffix: ".min", //.minをファイル名に追加
       })
     )
-    .pipe(gulp.dest("./public/assets/css/")); // 出力ディレクトリに書き出し
+    .pipe(gulp.dest("../assets/")); // 出力ディレクトリに書き出し
 }
 
 function watch() {
@@ -78,7 +78,7 @@ function watch() {
 function browserInit(done) {
   browserSync.init({
     server: {
-      baseDir: "./public/",
+      baseDir: "../",
     },
     // proxy: "http://localhost:8888/dev/",
   });
@@ -93,14 +93,14 @@ function browserReload(done) {
 function minJS() {
   return gulp
     .src("./src/assets/js/**/*.js")
-    .pipe(gulp.dest("./public/assets/js/")) // 圧縮前ファイルを一旦出力ディレクトリに書き出し
+    .pipe(gulp.dest("../assets/js/")) // 圧縮前ファイルを一旦出力ディレクトリに書き出し
     .pipe(uglify()) //jsの圧縮処理
     .pipe(
       rename({
         suffix: ".min",
       })
     )
-    .pipe(gulp.dest("./public/assets/js/"));
+    .pipe(gulp.dest("../assets/js/"));
 }
 
 function formatHTML() {
