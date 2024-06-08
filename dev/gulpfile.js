@@ -56,14 +56,14 @@ function compileSass() {
     .pipe(sass()) //sassコンパイルを実行
     .pipe(postcss([autoprefixer(), cssSorter()])) // ベンダープレフィックスを付加して、プロパティをソート
     .pipe(mmq()) // メディアクエリをまとめる
-    .pipe(gulp.dest("../assets/")) // 圧縮前ファイルを一旦出力ディレクトリに書き出し
+    .pipe(gulp.dest("../")) // 圧縮前ファイルを一旦出力ディレクトリに書き出し
     .pipe(cleanCss()) // cssの圧縮処理
     .pipe(
       rename({
         suffix: ".min", //.minをファイル名に追加
       })
     )
-    .pipe(gulp.dest("../assets/")); // 出力ディレクトリに書き出し
+    .pipe(gulp.dest("../")); // 出力ディレクトリに書き出し
 }
 
 function watch() {
@@ -72,7 +72,7 @@ function watch() {
   gulp.watch("./src/assets/js/**/*.js", gulp.series(minJS, browserReload)); // jsファイルの変更を監視
   gulp.watch("./src/assets/img/**/*", gulp.series(copyImage, browserReload)); // 画像ファイルの変更を監視
   gulp.watch("./src/**/*.ejs", gulp.series(compileEJS, browserReload)); // HTMLファイルの変更を監視
-  // gulp.watch("../**/*.php", browserReload); // phpファイルの変更を監視
+  gulp.watch("../**/*.php", browserReload); // phpファイルの変更を監視
 }
 
 function browserInit(done) {
@@ -112,25 +112,25 @@ function formatHTML() {
         indent_with_tabs: true,
       })
     )
-    .pipe(gulp.dest("./public"));
+    .pipe(gulp.dest("../"));
 }
 
 function compileEJS() {
   return gulp
     .src(["./src/**/*.ejs", "!./src/**/_*.ejs"])
     .pipe(ejs())
-    .pipe(rename({ extname: ".html" }))
+    .pipe(rename({ extname: ".php" }))
     .pipe(
       htmlBeautify({
         indent_size: 2,
         indent_with_tabs: true,
       })
     )
-    .pipe(gulp.dest("./public"));
+    .pipe(gulp.dest("../"));
 }
 
 function copyCss() {
-  return gulp.src("./src/**/*.css").pipe(gulp.dest("./public"));
+  return gulp.src("./src/**/*.css").pipe(gulp.dest("../"));
 }
 
 // wacthする前の初回出力ファイル作成

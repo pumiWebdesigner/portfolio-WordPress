@@ -1,25 +1,23 @@
-
 ・devフォルダを作成し、以下を格納
 　package.json
 　gulpfile.js
 　srcフォルダ
 
+・gulp.jsの内容を置換
+　　assets/css/　削除
+　　./public/ → ../　置換
+　　gulp.watch("../**/*.php", browserReload)　コメント戻し
+　　extname: ".html" → ".php"　置換
 ・ターミナルで以下を実行
 　cd dev
 　npm installを実行
 
-; ・srcフォルダを作成し、以下を格納
-; 　sass
-; 　js
-; 　img
 
-・gulp.jsの内容を置換
-　　./public/ → ../
-　　/css/ → /
-　　　※gulpfile.jsを起点にパスを決める
+　　※PHPファイルはホームディレクトリに配置
+の各出力先を以下に設定
+　dest("../css")
 
-; 　dest("../css")
-; 　　./public/assets → ../　に置換する
+   gulpfile.jsを起点にパスを決める
 ・ターミナルで以下を実行
 　npm gulp build
 
