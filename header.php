@@ -25,52 +25,43 @@
 					</h1>
 					<!-- グローバルナビ -->
 					<nav class="p-header__nav">
-						<div class="p-header__nav--item">
-							<a class="p-header__link hover__underline--from-left" href="<?php echo esc_url(home_url('/')); ?>/#works" target="_self">works</a>
-						</div>
-						<div class="p-header__nav--item">
-							<a class="p-header__link hover__underline--from-left" href="<?php echo esc_url(home_url('/')); ?>/#about" target="_self">about</a>
-						</div>
-						<div class="p-header__nav--item">
-							<a class="p-header__link hover__underline--from-left" href="<?php echo esc_url(home_url('/')); ?>/#skills" target="_self">skills</a>
-						</div>
-						<div class="p-header__nav--item">
-							<a class="p-header__link hover__underline--from-left" href="<?php echo esc_url(home_url('/')); ?>/#contact" target="_self">contact</a>
-						</div>
-						<div class="p-header__nav--item">
-							<a class="p-header__link hover__underline--from-left" href="https://twitter.com/pumi_webcoder" target="_blank">Twitter(X)</a>
-						</div>
+						<?php
+							wp_nav_menu(
+								array(
+									'depth' => 1,//階層の深さ
+									'theme_location' => 'global', // グローバルメニューをここに表示すると指定
+									'container' => false,//ulリストのさらに外側にcontainerを作りたい時のタグ名（divやul）
+									'menu_class' => 'p-header__nav--list',//ulに付与するクラス名
+									'li_class' => 'p-header__nav--item', // liタグへclass追加
+									'a_class' => 'p-header__nav--link hover__underline--from-left' // aタグへclass追加
+								)
+							);
+						?>
 					</nav>
+				
 					<!-- ハンバーガーメニュー -->
 					<div class="p-header__hamburger--button">
 						<button id="js-drawer__btn" class="c-hamburger-btn" aria-label="ハンバーガーメニュー">
-
 							<span class="c-hamburger-bar"></span>
-
 							<span class="c-hamburger-bar"></span>
-
 							<span class="c-hamburger-bar"></span>
-
 						</button>
 					</div>
 				</div>
 				<!-- ドロワーメニュー（ヘッダーコンテナの外） -->
 				<nav class="p-drawer__nav">
-					<div class="p-drawer__nav--item">
-						<a class="p-drawer__link" href="<?php echo esc_url(home_url('/')); ?>#works">works</a>
-					</div>
-					<div class="p-drawer__nav--item">
-						<a class="p-drawer__link" href="<?php echo esc_url(home_url('/')); ?>#about">about</a>
-					</div>
-					<div class="p-drawer__nav--item">
-						<a class="p-drawer__link" href="<?php echo esc_url(home_url('/')); ?>#skills">skills</a>
-					</div>
-					<div class="p-drawer__nav--item">
-						<a class="p-drawer__link" href="<?php echo esc_url(home_url('/')); ?>#contact">contact</a>
-					</div>
-					<div class="p-drawer__nav--item">
-						<a class="p-drawer__link" href="https://twitter.com/pumi_webcoder">Twitter(X)</a>
-					</div>
+					<?php
+						wp_nav_menu(
+							array(
+								'depth' => 1,//階層の深さ
+								'theme_location' => 'drawer', // グローバルメニューをここに表示すると指定
+								'container' => false,//ulリストのさらに外側にcontainerを作りたい時のタグ名（divやul）
+								'menu_class' => 'p-drawer__nav--list',//ulに付与するクラス名
+								'li_class' => 'p-drawer__nav--item', // liタグへclass追加
+								'a_class' => 'p-drawer__nav--link js-drawer__nav--link' // aタグへclass追加
+							)
+						);
+					?>
 				</nav>
 			</div>
 		</header>

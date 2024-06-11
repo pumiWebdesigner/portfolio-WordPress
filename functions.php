@@ -21,11 +21,40 @@ function my_script_init() {
     wp_enqueue_script("swiper-cdn-js", "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js", array(), "11.1.1", true);
     wp_enqueue_script("slider-js", get_template_directory_uri() . "/assets/js/slider.min.js", array("jquery"), filemtime(get_theme_file_path('/assets/js/slider.min.js')), true);
     wp_enqueue_script("dialog-js", get_template_directory_uri() . "/assets/js/dialog.min.js", array("jquery"), filemtime(get_theme_file_path('/assets/js/dialog.min.js')), true);
-    wp_enqueue_script("contact-js", get_template_directory_uri() . "/assets/js/contact-html.min.js", array("jquery"), filemtime(get_theme_file_path('/assets/js/contact-html.min.js')), true);
+    wp_enqueue_script("contact-js", get_template_directory_uri() . "/assets/js/contact-wordpress.min.js", array("jquery"), filemtime(get_theme_file_path('/assets/js/contact-wordpress.min.js')), true);
     wp_enqueue_script("wow-js", get_template_directory_uri() . "/assets/js/wow.min.js", array(), filemtime(get_theme_file_path('/assets/js/wow.min.js')), true);
     wp_enqueue_script("my-js", get_template_directory_uri() . "/assets/js/script.min.js", array("jquery"), filemtime(get_theme_file_path('/assets/js/script.min.js')), true);
 }
 add_action("wp_enqueue_scripts", "my_script_init");
+
+function my_menu_init() {
+    register_nav_menus(
+        array(
+            'global' => 'ヘッダーメニュー',//HTML内で呼び出すキーワード　=>　WordPress管理画面での選択項目
+            'drawer' => 'ドロワーメニュー',
+            'footer' => 'フッターメニュー',
+        )
+    );
+}
+add_action('init', 'my_menu_init');
+
+// wp_nav_menuの<li>にクラスを追加する関数
+function add_class_on_li($classes, $item, $args) {
+if (isset($args->li_class)) {
+    $classes[] = $args->li_class;
+}
+return $classes;
+}
+add_filter('nav_menu_css_class', 'add_class_on_li', 1, 3);
+
+// wp_nav_menuの<a>にクラスを追加する関数
+function add_class_on_a($atts, $item, $args) {
+if (isset($args->a_class)) {
+    $atts['class'] = $args->a_class;
+}
+return $atts;
+}
+add_filter('nav_menu_link_attributes', 'add_class_on_a', 1, 3);
 
 // 対象の記事のカテゴリーを表示する、aタグかどうかは引数で指定できる
 function my_the_post_category($anchor = true) {

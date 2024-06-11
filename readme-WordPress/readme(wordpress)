@@ -25,9 +25,15 @@
 　　　↓　WordPress内のパスはこっち
 置換　./index.html　→　<?php echo esc_url(home_url('/')); ?>
 置換　./〇〇.html　→　<?php echo esc_url(home_url('/')); ?>〇〇/
+※　直接HTMLファイルは対象外
 
 style.cssのパスを修正
 置換　../ → ./assets/
+追記　
+@charset "UTF-8";　
+/*
+Theme Name: TF-30
+*/
 
 必須ファイル作成
 作成　　header.php
@@ -43,8 +49,3 @@ style.cssのパスを修正
 
 ・ターミナルで以下を実行
 　npx gulp dev
-
-
-下層ページのパスはドメイン配下からのパスで記述できる（サーバにアップロードしている場合）
-（変更前）path : "./company/index.html" 
-（変更後）path : "/company/index.html" 

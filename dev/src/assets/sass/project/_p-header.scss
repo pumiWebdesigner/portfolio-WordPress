@@ -24,25 +24,22 @@
 }
 
 .p-header__nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   @include mq(sp) {
     display: none;
   }
 }
-
+.p-header__nav--list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .p-header__nav--item {
-  // border-left: 1px solid currentColor;
-  // &:first-child {
-  //   border-left: revert;
-  // }
   color: white;
   font-family: "Noto Sans JP";
   font-size: 1.5em;
 }
 
-.p-header__link {
+.p-header__nav--link {
   padding: 0.2em 1em;
   @media (hover: hover) {
     &:hover {
