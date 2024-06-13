@@ -1748,6 +1748,10 @@ input[type="date"].is-input::before {
   margin-top: var(--height-pc-header);
 }
 
+.u-hidden-all {
+  display: none !important;
+}
+
 .u-hidden-visually {
   height: 1px !important;
   margin: -1px !important;
@@ -1758,6 +1762,11 @@ input[type="date"].is-input::before {
   clip: rect(0, 0, 0, 0) !important;
   border: 0 !important;
   white-space: nowrap !important;
+}
+
+.u-flex-center {
+  align-items: center;
+  justify-content: center;
 }
 
 .hover__underline--from-left {

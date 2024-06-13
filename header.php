@@ -18,13 +18,20 @@
 		<header class="l-header p-header">
 			<div class="l-inner">
 				<!-- ロゴ、グローバルナビ、ハンバーガーメニュー -->
-				<div class="p-header__container">
+				<div class="p-header__container <?php if (!is_front_page()) echo 'u-flex-center'; ?>">
 					<!-- ロゴ -->
-					<h1 class="c-logo">
+					<!-- トップページではロゴをh1に、それ以外のページではdivに -->
+					<?php if (is_front_page()) : ?>
+						<h1 class="header__logo"><a href="<?php echo home_url('/'); ?>">Pumi's<br />Portfolio</a></h1>
+					<?php else : ?>
+						<div class="header__logo"><a href="<?php echo home_url('/'); ?>">Pumi's<br />Portfolio</a></div>
+					<?php endif; ?>
+
+					<!-- <h1 class="c-logo">
 						<a href="<?php echo esc_url(home_url('/')); ?>">Pumi's<br />Portfolio</a>
-					</h1>
+					</h1> -->
 					<!-- グローバルナビ -->
-					<nav class="p-header__nav">
+					<nav class="p-header__nav <?php if (!is_front_page()) echo 'u-hidden-all'; ?>">
 						<?php
 							wp_nav_menu(
 								array(
@@ -38,9 +45,9 @@
 							);
 						?>
 					</nav>
-				
+
 					<!-- ハンバーガーメニュー -->
-					<div class="p-header__hamburger--button">
+					<div class="p-header__hamburger--button <?php if (!is_front_page()) echo 'u-hidden-all'; ?>">
 						<button id="js-drawer__btn" class="c-hamburger-btn" aria-label="ハンバーガーメニュー">
 							<span class="c-hamburger-bar"></span>
 							<span class="c-hamburger-bar"></span>
