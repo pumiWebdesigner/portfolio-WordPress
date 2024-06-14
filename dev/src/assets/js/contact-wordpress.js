@@ -4,7 +4,7 @@
 
   // form送信ボタン
   const submit = jQuery(".js-submit");
-
+  if (!form.length || !submit.length) return;
   // 送信ボタンは初期値disabled
   submit.prop("disabled", true);
 
@@ -35,6 +35,7 @@
   // safari：✘ready,○load、✘blur,○change
   jQuery(window).on("load", function () {
     var $require = jQuery(".wpcf7-form [required]");
+    if ($require.length === 0) return;
     $require.on("change", function () {
       var $this = jQuery(this);
       // input要素が単体：input要素のnextにエラーメッセージ
@@ -139,7 +140,7 @@
   document.addEventListener("DOMContentLoaded", function () {
     const checkbox = document.querySelector('input[name="privacy-policy"]');
     const privacySpan = document.querySelector(".privacy-span");
-
+    if (!checkbox || !privacySpan) return;
     checkbox.addEventListener("change", function () {
       if (checkbox.checked) {
         privacySpan.classList.add("checked");
