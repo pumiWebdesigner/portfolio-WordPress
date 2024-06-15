@@ -8,13 +8,13 @@
 <?php 
 	get_template_part('template-parts/works');
 ?>
-<!-- about -->
-<?php 
-	get_template_part('template-parts/about');
-?>
 <!-- skills -->
 <?php 
 	get_template_part('template-parts/skills');
+?>
+<!-- about -->
+<?php 
+	get_template_part('template-parts/about');
 ?>
 <!-- contact -->
 <?php 

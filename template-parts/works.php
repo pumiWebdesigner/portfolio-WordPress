@@ -28,15 +28,15 @@
 								<!-- <img src="/assets/img/comp/clinic.webp" alt="仮想の歯医者HP" /> -->
 							</div>
 						<?php endif; ?>
-					<dialog class="dialog__wrapper" aria-label="Dialog Box">
-						<div class="dialog__container">
-							<div class="dialog__img">
+					<dialog class="p-dialog__wrapper" aria-label="Dialog Box">
+						<div class="p-dialog__container">
+							<div class="p-dialog__img">
 								<?php if (has_post_thumbnail()) : ?>
 									<?php the_post_thumbnail('medium'); ?>
 								<?php endif; ?>
 							</div>
 							<!-- <img src="/assets/img/comp/clinic.webp" alt="仮想の歯医者HP" /> -->
-							<div class="dialog__text">
+							<div class="p-dialog__text">
 								<?php
 								// カスタムフィールドの設定を配列でまとめる
 									$args = array(

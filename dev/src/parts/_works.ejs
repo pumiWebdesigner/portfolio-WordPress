@@ -17,7 +17,7 @@ const works = [
     alt : "本サイト（ポートフォリオサイト）",
     skills : "HTML、Sass、jQuery、GitHub、Gulp、EJS",
     season : "2023年3月～4月",
-    time : "約2週間（40時間）",
+    time : "約2.5ヶ月（140時間）",
     message : "一度BEMで作成しましたが、FLOCSS、EJSを学習し再構築しました。一番ご覧になっていただきたい「実績」セクションは、Swiperによるスライダーの実装にdialogタグによるモーダル表示を組み合わせました。",
     link : "./index.html"
   },
@@ -88,12 +88,12 @@ _%>
           <div class="p-works__img c-img js-modal__btn--open">
             <img src="./assets/img/comp/<%= work.img %>" alt="<%= work.alt %>" />
           </div>
-          <dialog class="dialog__wrapper" aria-label="Dialog Box">
-            <div class="dialog__container">
-              <div class="dialog__img">
+          <dialog class="p-dialog__wrapper" aria-label="Dialog Box">
+            <div class="p-dialog__container">
+              <div class="p-dialog__img">
                 <img src="./assets/img/comp/<%= work.img %>" alt="<%= work.alt %>" />
               </div>
-              <div class="dialog__text">
+              <div class="p-dialog__text">
                 <dl>
                   <dt>スキル</dt>
                   <dd><%= work.skills %></dd>

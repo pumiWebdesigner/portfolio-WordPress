@@ -24,7 +24,7 @@
 
 .privacy-span {
   // ボタン横の文字
-  @include font(14, 500, null, null);
+  font-size: size-calc-clamp(12, 14, 375, 1440);
   // ボタンの場所
   padding-left: calc(24px + 8px);
   position: relative;
