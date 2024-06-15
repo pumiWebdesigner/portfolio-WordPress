@@ -1,10 +1,18 @@
 <dl>
-	<dt>スキル</dt>
-	<dd><?php the_field("skills"); ?></dd>
-	<dt>制作時期</dt>
-	<dd><?php the_field("date"); ?></dd>
-	<dt>制作時間</dt>
-	<dd><?php the_field("time"); ?></dd>
-	<dt>制作概要</dt>
-	<dd><?php the_field("overview"); ?></dd>
+	<?php if (get_field($args['dd1'])) { ?>
+		<dt><?php echo $args['dt1']; ?></dt>
+		<dd><?php the_field($args['dd1']); ?></dd>
+	<?php } ?>
+	<?php if (get_field($args['dd2'])) { ?>
+		<dt><?php echo $args['dt2']; ?></dt>
+		<dd><?php the_field($args['dd2']); ?></dd>
+	<?php } ?>
+	<?php if (get_field($args['dd3'])) { ?>
+		<dt><?php echo $args['dt3']; ?></dt>
+		<dd><?php the_field($args['dd3']); ?></dd>
+	<?php } ?>
+	<?php if (get_field($args['dd4'])) { ?>
+		<dt><?php echo $args['dt4']; ?></dt>
+		<dd><?php the_field($args['dd4']); ?></dd>
+	<?php } ?>
 </dl>

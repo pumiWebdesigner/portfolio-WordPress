@@ -587,7 +587,7 @@ a {
 
 /* デフォルトのradioボタンの左端マージンを0にする */
 
-.wpcf7-list-item.first {
+.wpcf7-list-item {
 	margin-left: 0;
 }
 
@@ -646,67 +646,17 @@ a {
 /* メインコンテンツのスタイル */
 
 .l-main-content {
-	background-color: #ffffff;
-	border-right: 1px solid #e1e1e1;
 	flex: 1;
 	padding: 20px;
 }
 
 /* サイドバーのスタイル */
 
-.l-sidebar {
+.l-sidebar-content {
 	background-color: #f9f9f9;
 	border-left: 1px solid #e1e1e1;
 	padding: 20px;
 	width: 300px;
-}
-
-/* サイドバー内のウィジェットのスタイル */
-
-.widget {
-	margin-bottom: 30px;
-}
-
-.widget .widget-title {
-	color: #333;
-	font-size: 1.5em;
-	margin-bottom: 15px;
-}
-
-.widget .profile-content {
-	text-align: center;
-}
-
-.widget .profile-content img {
-	border-radius: 50%;
-	height: 100px;
-	margin-bottom: 10px;
-	width: 100px;
-}
-
-.widget .profile-content p {
-	color: #666;
-	font-size: 1em;
-}
-
-.widget ul {
-	list-style: none;
-	padding: 0;
-}
-
-.widget ul li {
-	margin-bottom: 10px;
-}
-
-.widget ul li a {
-	color: #0073aa;
-	font-size: 1em;
-	text-decoration: none;
-}
-
-.widget ul li a:hover {
-	color: #005177;
-	text-decoration: underline;
 }
 
 .c-hamburger-btn {
@@ -853,6 +803,10 @@ a {
 	color: white;
 	transition: 0.5s;
 	width: 100%;
+}
+
+.p-header__logo {
+	font-size: 1.5rem;
 }
 
 .p-header__container {
@@ -1223,15 +1177,10 @@ a {
 	background: url(../img/swiper_next.svg) center center/cover;
 }
 
-.p-about__contents {
-	margin-inline: auto;
-	max-width: 1000px;
-}
-
 .p-about__container {
 	align-items: center;
 	display: flex;
-	gap: 2vw;
+	gap: 3rem;
 	justify-content: center;
 }
 
@@ -1239,12 +1188,17 @@ a {
 	aspect-ratio: 1;
 	box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 	height: auto;
-	width: 30vw;
+	width: 40%;
+}
+
+.p-about__text--contents {
+	background-color: white;
+	max-width: 1440px;
+	padding: 2rem;
 }
 
 .p-about__text--main {
 	font-size: 1.2rem;
-	margin-top: 0.5rem;
 }
 
 .p-about__text--sub-title {
@@ -1295,16 +1249,11 @@ a {
 
 .p-contact__form--item {
 	align-items: center;
-	border-bottom: #ddd solid 1px;
 	display: flex;
 	gap: 60px;
 	padding-bottom: 27.5px;
 	padding-top: 28px;
 	text-align: left;
-}
-
-.p-contact__form--item:first-child {
-	border-top: #ddd solid 1px;
 }
 
 .p-contact__form--title {
@@ -1832,6 +1781,11 @@ strong.color-accent {
 	padding-inline: 1rem;
 }
 
+.p-modal__buttons {
+	flex-direction: column;
+	gap: 20px;
+}
+
 .p-bg {
 	height: calc(100vh - var(--height-sp-header));
 	top: var(--height-sp-header);
@@ -1998,18 +1952,29 @@ input[type=date] {
 
 .p-about__container {
 	flex-direction: column-reverse;
-	gap: revert;
-	margin-top: 3rem;
 }
 
 .p-about__img {
 	max-width: 400px;
-	width: 70vw;
+	width: 70%;
 }
 
 .p-about__text--contents {
-	padding: 2rem;
+	margin-top: 3rem;
+	max-width: 700px;
 	width: revert;
+}
+
+}
+
+@media screen and (max-width: 1024px) {
+
+.p-contact__form--item {
+	gap: 30px;
+}
+
+.p-contact__form--radio-wrapper {
+	gap: 16px;
 }
 
 }

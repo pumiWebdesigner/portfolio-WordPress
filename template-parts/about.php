@@ -1,5 +1,5 @@
 <section id="about" class="l-section p-section wow fadeInUp">
-			<div class="l-inner">
+			<div class="l-inner p-about__inner">
 				<hgroup class="p-section__title">
 					<h2 class="p-section__title--main">About</h2>
 					<p class="p-section__title--sub">私について</p>

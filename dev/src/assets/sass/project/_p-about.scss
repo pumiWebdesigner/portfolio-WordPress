@@ -3,38 +3,39 @@
 .p-about-section {
 }
 .p-about__contents {
-  max-width: 1000px;
-  margin-inline: auto;
+  // max-width: 1000px;
+  // margin-inline: auto;
 }
 .p-about__container {
   display: flex;
-  gap: 2vw;
+  gap: 3rem;
   justify-content: center;
   align-items: center;
   @media screen and (max-width: 1280px) {
     flex-direction: column-reverse;
-    margin-top: 3rem;
-    gap: revert;
   }
 }
 .p-about__img {
   box-shadow: 0 4px 15px 0 rgba(black, 0.15);
   aspect-ratio: 1;
   height: auto;
-  width: 30vw;
+  width: 40%;
   @media screen and (max-width: 1280px) {
-    width: 70vw;
+    width: 70%;
     max-width: 400px;
   }
 }
 .p-about__text--contents {
+  max-width: 1440px;
+  padding: 2rem;
+  background-color: white;
   @media screen and (max-width: 1280px) {
     width: revert;
-    padding: 2rem;
+    max-width: 700px;
+    margin-top: 3rem;
   }
 }
 .p-about__text--main {
-  margin-top: 0.5rem;
   font-size: 1.2rem;
 }
 .p-about__text--sub-title {

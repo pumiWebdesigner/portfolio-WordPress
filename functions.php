@@ -1,5 +1,8 @@
 <?php 
-// 基本的な設定を読み込む
+////////////////////////////////
+//         基本的な設定         //
+////////////////////////////////
+
 function my_setup() {
     // アイキャッチ画像を使用する
     add_theme_support('post-thumbnails');
@@ -12,7 +15,10 @@ function my_setup() {
 }
 add_action("after_setup_theme", "my_setup");
 
-// CSS、JSを読み込む
+////////////////////////////////
+//       CSS、JSを読み込む       //
+////////////////////////////////
+
 function my_script_init() {
     wp_enqueue_style("swiper-cdn-css", "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css", array(), "11.0.6", "all");
     wp_enqueue_style("font-awesome", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css", array(), "6.4.2", "all");
@@ -27,6 +33,9 @@ function my_script_init() {
 }
 add_action("wp_enqueue_scripts", "my_script_init");
 
+////////////////////////////////
+//       グローバルメニュー       //
+////////////////////////////////
 function my_menu_init() {
     register_nav_menus(
         array(
@@ -55,6 +64,10 @@ if (isset($args->a_class)) {
 return $atts;
 }
 add_filter('nav_menu_link_attributes', 'add_class_on_a', 1, 3);
+
+////////////////////////////////
+//        テンプレパターン        //
+////////////////////////////////
 
 // 対象の記事のカテゴリーを表示する、aタグかどうかは引数で指定できる
 function my_the_post_category($anchor = true) {
@@ -134,4 +147,3 @@ add_action( 'wp_footer', 'add_origin_thanks_page' );
     return;
     } 
 }
-

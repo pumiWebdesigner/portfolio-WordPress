@@ -22,9 +22,9 @@
 					<!-- ロゴ -->
 					<!-- トップページではロゴをh1に、それ以外のページではdivに -->
 					<?php if (is_front_page()) : ?>
-						<h1 class="header__logo"><a href="<?php echo home_url('/'); ?>">Pumi's<br />Portfolio</a></h1>
+						<h1 class="p-header__logo"><a href="<?php echo home_url('/'); ?>">Pumi's<br />Portfolio</a></h1>
 					<?php else : ?>
-						<div class="header__logo"><a href="<?php echo home_url('/'); ?>">Pumi's<br />Portfolio</a></div>
+						<div class="p-header__logo"><a href="<?php echo home_url('/'); ?>">Pumi's<br />Portfolio</a></div>
 					<?php endif; ?>
 
 					<!-- <h1 class="c-logo">
