@@ -21,6 +21,11 @@
       // 一旦バリデーションチェックOKにするけど、追加チェック次第で再度NGにする
       submit.prop("disabled", false);
       if (jQuery('input[type="checkbox"]:checked').length === 0) submit.prop("disabled", true);
+      if (window.location.href.includes("reservation")) {
+        // 予約画面は、selectもチェック対象
+        if (jQuery('input[type="checkbox"]:checked').length === 0) submit.prop("disabled", true);
+        else if (jQuery(".js-select").val() === "ご連絡方法を選択ください。") submit.prop("disabled", true);
+      }
     } else {
       submit.prop("disabled", true);
     }
@@ -96,19 +101,18 @@
   jQuery(document).ready(function () {
     var jQuerycheckbox = jQuery(".js-checkbox");
     jQuerycheckbox.on("change", function () {
-      console.log("test");
-
       var $this = jQuery(this);
+      // var $errorMessage = $this.closest(".wpcf7-form-control-wrap").next(".error-message"); //thisに対するエラーメッセージの要素
       var $errorMessage = $this.closest(".js-form--wrapper").next(".error-message"); //thisに対するエラーメッセージの要素
 
       // チェックボックスのバリデーション
-      // if ($this.hasClass("js-checkbox")) {
-      //   if (jQuery('input[type="checkbox"]:checked').length === 0) {
-      $errorMessage.text("チェックされておりません。").show();
-      // } else {
-      //   $errorMessage.hide(); // 条件を満たす場合はエラーメッセージを隠す
-      // }
-      // }
+      if ($this.hasClass("js-checkbox")) {
+        if (jQuery('input[type="checkbox"]:checked').length === 0) {
+          $errorMessage.text("チェックされておりません。").show();
+        } else {
+          $errorMessage.hide(); // 条件を満たす場合はエラーメッセージを隠す
+        }
+      }
     });
   });
 
