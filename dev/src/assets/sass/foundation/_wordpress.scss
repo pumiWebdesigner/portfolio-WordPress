@@ -25,3 +25,8 @@
   opacity: 0;
   transform: translateY(20px);
 }
+
+// 送信ボタンのレイアウトが崩れるので非表示にする
+.wpcf7-spinner {
+  display: none;
+}
