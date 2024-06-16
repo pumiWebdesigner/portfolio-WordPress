@@ -1572,7 +1572,10 @@ input[type=date].is-input::before {
 	overflow: hidden;
 }
 
-.privacy-span.checked::before {
+.privacy-span.checked::before,
+.privacy-span.hover::before,
+.privacy-span.active::before,
+.privacy-span.focus::before {
 	border-color: var(--main);
 }
 

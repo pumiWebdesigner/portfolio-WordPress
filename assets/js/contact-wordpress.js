@@ -59,16 +59,22 @@ jQuery(document).ready(function () {
           $errorMessage.hide(); // 条件を満たす場合はエラーメッセージを隠す
         }
       }
+    });
+  });
+
+  // checkbox:ラジオボタンと違って、何も選ばない状態に戻せる
+  jQuery(document).ready(function () {
+    var jQuerycheckbox = jQuery(".js-checkbox");
+    jQuerycheckbox.on("change", function () {
+      var $this = jQuery(this);
+      var $errorMessage = $this.closest(".js-form--wrapper").next(".error-message"); //thisに対するエラーメッセージの要素
 
       // チェックボックスのバリデーション
       if ($this.hasClass("js-checkbox")) {
-        console.log("test");
-
         if (jQuery('input[type="checkbox"]:checked').length === 0) {
-          var $errorMessageCheckbox = $this.closest(".js-form--wrapper").next(".error-message"); //thisに対するエラーメッセージの要素
-          $errorMessageCheckbox.text("チェックされておりません。").show();
+          $errorMessage.text("チェックされておりません。").show();
         } else {
-          $errorMessageCheckbox.hide(); // 条件を満たす場合はエラーメッセージを隠す
+          $errorMessage.hide(); // 条件を満たす場合はエラーメッセージを隠す
         }
       }
     });
@@ -78,7 +84,9 @@ jQuery(document).ready(function () {
 {
   document.addEventListener("DOMContentLoaded", function () {
     const checkbox = document.querySelector('input[name="privacy-policy"]');
+    const checkboxWrapper = document.querySelector(".js-form--wrapper");
     const privacySpan = document.querySelector(".privacy-span");
+    // Check event for checkbox
     if (!checkbox || !privacySpan) return;
     checkbox.addEventListener("change", function () {
       if (checkbox.checked) {
@@ -86,6 +94,29 @@ jQuery(document).ready(function () {
       } else {
         privacySpan.classList.remove("checked");
       }
+    });
+    // Hover event for checkbox
+    checkboxWrapper.addEventListener("mouseover", function () {
+      privacySpan.classList.add("hover");
+    });
+    checkboxWrapper.addEventListener("mouseout", function () {
+      privacySpan.classList.remove("hover");
+    });
+
+    // Focus event for checkbox
+    checkbox.addEventListener("focus", function () {
+      privacySpan.classList.add("focus");
+    });
+    checkbox.addEventListener("blur", function () {
+      privacySpan.classList.remove("focus");
+    });
+
+    // Active event for checkbox
+    checkboxWrapper.addEventListener("mousedown", function () {
+      privacySpan.classList.add("active");
+    });
+    checkboxWrapper.addEventListener("mouseup", function () {
+      privacySpan.classList.remove("active");
     });
   });
 }

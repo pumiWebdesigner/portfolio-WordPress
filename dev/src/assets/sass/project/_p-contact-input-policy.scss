@@ -11,11 +11,16 @@
   overflow: hidden;
 }
 
-.privacy-span.checked {
+.privacy-span.checked,
+.privacy-span.hover,
+.privacy-span.active,
+.privacy-span.focus {
   // チェック時にボーダー色を変更
   &::before {
     border-color: var(--main);
   }
+}
+.privacy-span.checked {
   // チェック時にチェック時マークを表示
   &::after {
     opacity: 1;
