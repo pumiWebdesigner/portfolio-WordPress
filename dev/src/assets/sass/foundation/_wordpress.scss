@@ -1,10 +1,14 @@
+@use "../global" as *;
+
 /* デフォルトのエラーメッセージを非表示にする */
 .wpcf7-not-valid-tip {
   display: none;
 }
 /* デフォルトのradioボタンの左端マージンを0にする */
 .wpcf7-list-item {
-  margin-left: 0;
+  @include mq(tab-pc) {
+    margin-left: 0;
+  }
 }
 
 /* 送信後のメッセージを非表示にする */

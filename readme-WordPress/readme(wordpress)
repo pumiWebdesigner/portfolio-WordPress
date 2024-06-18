@@ -37,6 +37,7 @@ style.cssのパスを修正
 /*
 Theme Name: portfolio
 */
+ポートフォリオではvariable.scssに書いた
 
 必須ファイル作成
 作成　　header.php
