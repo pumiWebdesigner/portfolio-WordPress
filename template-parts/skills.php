@@ -7,84 +7,65 @@
 
 		<div class="p-section__contents p-skills__contents">
 			<ul class="p-skills__list">
-				<li class="p-skills__item wow fadeInUp">
-					<div class="p-skills__item--img">
-						<img src="<?php echo get_template_directory_uri() ?>/assets/img/skills/html5.svg" alt="html5" />
-					</div>
-					<h3 class="p-skills__item-name">HTML</h3>
-				</li>
-				<li class="p-skills__item wow fadeInUp">
-					<div class="p-skills__item--img">
-						<img src="<?php echo get_template_directory_uri() ?>/assets/img/skills/css3.svg" alt="css3" />
-					</div>
-					<h3 class="p-skills__item-name">CSS</h3>
-				</li>
-				<li class="p-skills__item wow fadeInUp">
-					<div class="p-skills__item--img">
-						<img src="<?php echo get_template_directory_uri() ?>/assets/img/skills/sass.svg" alt="sass" />
-					</div>
-					<h3 class="p-skills__item-name">Sass</h3>
-				</li>
-				<li class="p-skills__item wow fadeInUp">
-					<div class="p-skills__item--img">
-						<img src="<?php echo get_template_directory_uri() ?>/assets/img/skills/javascript.svg" alt="JavaScript" />
-					</div>
-					<h3 class="p-skills__item-name">JavaScript</h3>
-				</li>
-				<li class="p-skills__item wow fadeInUp">
-					<div class="p-skills__item--img">
-						<img src="<?php echo get_template_directory_uri() ?>/assets/img/skills/jquery.svg" alt="jQuery" />
-					</div>
-					<h3 class="p-skills__item-name">jQuery</h3>
-				</li>
-				<li class="p-skills__item wow fadeInUp">
-					<div class="p-skills__item--img">
-						<img src="<?php echo get_template_directory_uri() ?>/assets/img/skills/wordpress.svg" alt="WordPress" />
-					</div>
-					<h3 class="p-skills__item-name">WordPress</h3>
-				</li>
-				<li class="p-skills__item wow fadeInUp">
-					<div class="p-skills__item--img">
-						<img src="<?php echo get_template_directory_uri() ?>/assets/img/skills/github.svg" alt="github" />
-					</div>
-					<h3 class="p-skills__item-name">github</h3>
-				</li>
-				<li class="p-skills__item wow fadeInUp">
-					<div class="p-skills__item--img">
-						<img src="<?php echo get_template_directory_uri() ?>/assets/img/skills/gulp.svg" alt="gulp" />
-					</div>
-					<h3 class="p-skills__item-name">gulp</h3>
-				</li>
+				
+				<!-- カスタム投稿タイプskill-iconで作成しているカスタム投稿を全て表示する	 -->
+				<?php
+				$args = array(
+					'post_type' => 'skill-icon',
+					'posts_per_page' => -1,
+					'orderby' => 'menu_order',
+					'order' => 'ASC'
+				);
+				$the_query = new WP_Query($args);
+				// the_query内のループ前処理
+				if ($the_query->have_posts()) :
+					while ($the_query->have_posts()) : $the_query->the_post();
+				?>
+				
+					<!-- imgタグのリンクはサムネイル、ALT属性にはタイトルを表示する -->
+					<li class="p-skills__item wow fadeInUp">
+						<div class="p-skills__item--img">
+							<img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" />
+						</div>
+						<h3 class="p-skills__item-name">
+							<?php the_title(); ?>
+						</h3>
+					</li>
+				<?php
+					endwhile;
+				endif;
+				wp_reset_postdata();
+				?>
 			</ul>
 			<div class="p-skills__messages">
 				<ul>
+				<!-- カスタム投稿タイプskill-textで作成しているカスタム投稿を全て表示する	 -->
+
+				<?php
+				$args = array(
+					'post_type' => 'skill-text',
+					'posts_per_page' => -1,
+					'orderby' => 'menu_order',
+					'order' => 'ASC'
+				);
+				$the_query = new WP_Query($args);
+				// the_query内のループ前処理
+				if ($the_query->have_posts()) :
+					while ($the_query->have_posts()) : $the_query->the_post();
+				?>
+				
+				<!-- カスタム投稿のタイトルと本文を表示する -->
 					<li class="p-skills__text--item">
-						<div class="p-skills__text--title-main">HTMLサイト</div>
-						<div class="p-skills__text--title-sub"><strong class="color-accent">W3C標準に準拠</strong>したコーディングを行います。</div>
+						<div class="p-skills__text--title-main"><?php the_title(); ?></div>
+						<div class="p-skills__text--title-sub"><?php the_content(); ?></div>
 					</li>
-					<li class="p-skills__text--item">
-						<div class="p-skills__text--title-main">WordPressサイト</div>
-						<div class="p-skills__text--title-sub">ブログ投稿者の操作しやすさを意識して<strong class="color-accent">カスタム</strong>いたします</div>
-					</li>
-					<li class="p-skills__text--item">
-						<div class="p-skills__text--title-main">SEO</div>
-						<div class="p-skills__text--title-sub"><strong class="color-accent">パーツの役割を意識して適切なタグを使用する</strong>等、適切なページ構成で実装します。</div>
-					</li>
-					<li class="p-skills__text--item">
-						<div class="p-skills__text--title-main">アニメーション</div>
-						<div class="p-skills__text--title-sub">
-							<strong class="color-accent">CSS・javaScript・jQuery</strong>
-							を使用した簡易なアニメーションを実装可能です。
-						</div>
-					</li>
-					<li class="p-skills__text--item">
-						<div class="p-skills__text--title-main">レスポンシブデザイン</div>
-						<div class="p-skills__text--title-sub">
-							<strong class="color-accent">スマホ・タブレット・パソコン</strong>
-							に合わせた画面レイアウトを実装可能です。
-						</div>
-					</li>
+				<?php
+					endwhile;
+				endif;
+				wp_reset_postdata();
+				?>
 				</ul>
+
 			</div>
 		</div>
 	</div>
