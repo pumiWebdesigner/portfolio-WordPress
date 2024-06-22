@@ -20,5 +20,9 @@
 <?php 
 	get_template_part('template-parts/contact');
 ?>
-	
+<!-- twitter -->
+<?php 
+	get_template_part('template-parts/twitter');
+?>
+
 <?php get_footer(); ?>
