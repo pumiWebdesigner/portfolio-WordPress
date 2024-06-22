@@ -1,0 +1,53 @@
+@use "../global" as *;
+
+/* ローディング画面の背景 */
+.p-loading__bg {
+  width: 100vw;
+  height: 100vh;
+  transition: all 1s;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+// ローディング画面の文字
+.p-loading__text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100px;
+  height: 100px;
+  color: white;
+  animation: move 2s linear infinite;
+  font-size: 2rem;
+  place-items: center;
+}
+// ローディング後の停止クラス
+.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+// ローディングアニメーション（左から右へ移動＆回転）
+@keyframes move {
+  0% {
+    left: 0;
+    transform: translateY(-50%) rotate(90deg);
+    opacity: 0;
+  }
+  35% {
+    left: 40%;
+    transform: translateY(-50%) rotate(0deg);
+    opacity: 1;
+  }
+  65% {
+    left: 60%;
+    transform: translateY(-50%) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    transform: translateY(-50%) rotate(-90deg);
+    opacity: 0;
+  }
+}

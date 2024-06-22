@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<!-- BackGround -->
+<!-- BackGround & loading-->
 <?php 
 	get_template_part('template-parts/background');
 ?>
@@ -20,9 +20,5 @@
 <?php 
 	get_template_part('template-parts/contact');
 ?>
-<!-- twitter -->
-<?php 
-	get_template_part('template-parts/twitter');
-?>
-
+  
 <?php get_footer(); ?>

@@ -1,5 +1,9 @@
 /*
 Theme Name: portfolio
+Theme URI: https://pumi-webcoder.com/portfolio
+Author: pumi
+Author URI: https://pumi-webcoder.com/portfolio
+Description: WEBコーダーpumiのポートフォリオサイトです。
 */
 
 :root {
@@ -1619,6 +1623,36 @@ input[type=date].is-input::before {
 	width: 13px;
 }
 
+/* ローディング画面の背景 */
+
+.p-loading__bg {
+	background-color: #333;
+	height: 100vh;
+	left: 0;
+	position: fixed;
+	top: 0;
+	transition: all 1s;
+	width: 100vw;
+	z-index: 9999;
+}
+
+.p-loading__text {
+	animation: move 2s linear infinite;
+	color: white;
+	font-size: 2rem;
+	height: 100px;
+	place-items: center;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 100px;
+}
+
+.loaded {
+	opacity: 0;
+	visibility: hidden;
+}
+
 .u-separate {
 	margin-bottom: 24px;
 	margin-top: 24px;
@@ -1860,6 +1894,34 @@ input[type=date] {
 
 .p-skills__item--img {
 	width: 20px;
+}
+
+}
+
+@keyframes move {
+
+0% {
+	left: 0;
+	opacity: 0;
+	transform: translateY(-50%) rotate(90deg);
+}
+
+35% {
+	left: 40%;
+	opacity: 1;
+	transform: translateY(-50%) rotate(0deg);
+}
+
+65% {
+	left: 60%;
+	opacity: 1;
+	transform: translateY(-50%) rotate(0deg);
+}
+
+100% {
+	left: 100%;
+	opacity: 0;
+	transform: translateY(-50%) rotate(-90deg);
 }
 
 }
