@@ -11,11 +11,21 @@
   left: 0;
   z-index: 9999;
 }
+.p-loading__spiner {
+  width: 50px;
+  height: 50px;
+  margin-inline: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+}
+
 // ローディング画面の文字
 .p-loading__text {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  // transform: translateY(-50%);
   width: 100px;
   height: 100px;
   color: white;
@@ -32,22 +42,22 @@
 @keyframes move {
   0% {
     left: 0;
-    transform: translateY(-50%) rotate(90deg);
+    transform: rotate(90deg);
     opacity: 0;
   }
   35% {
     left: 40%;
-    transform: translateY(-50%) rotate(0deg);
+    transform: rotate(0deg);
     opacity: 1;
   }
   65% {
     left: 60%;
-    transform: translateY(-50%) rotate(0deg);
+    transform: rotate(0deg);
     opacity: 1;
   }
   100% {
     left: 100%;
-    transform: translateY(-50%) rotate(-90deg);
+    transform: rotate(-90deg);
     opacity: 0;
   }
 }

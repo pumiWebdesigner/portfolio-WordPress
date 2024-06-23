@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var container2 = document.querySelector(".schedule-text");
   //   container2.innerHTML = ""; // テキストを一旦クリア
   container2.style.opacity = 0.25;
-  var delay = 50; // 0.05秒
+  var delay = 25; // 0.025秒
 
   // 1文字ずつspanタグで囲んで追加
   for (var i = 0; i < text.length; i++) {
