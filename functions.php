@@ -25,6 +25,8 @@ function my_script_init() {
     wp_enqueue_style("wow-css", get_template_directory_uri() . "/assets/css/animate.css", array(), filemtime(get_theme_file_path('/assets/css/animate.css')), "all");
     wp_enqueue_style("my-css", get_template_directory_uri() . "/style.css", array(), filemtime(get_theme_file_path('style.css')), "all");
     wp_enqueue_script("swiper-cdn-js", "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js", array(), "11.1.1", true);
+    wp_enqueue_script("gsap-cdn-js", "https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js", array(), "3.12.5", true);
+    wp_enqueue_script("app-js", get_template_directory_uri() . "/assets/js/app.min.js", array(), filemtime(get_theme_file_path('/assets/js/app.min.js')), true);
     wp_enqueue_script("slider-js", get_template_directory_uri() . "/assets/js/slider.min.js", array("jquery"), filemtime(get_theme_file_path('/assets/js/slider.min.js')), true);
     wp_enqueue_script("dialog-js", get_template_directory_uri() . "/assets/js/dialog.min.js", array("jquery"), filemtime(get_theme_file_path('/assets/js/dialog.min.js')), true);
     wp_enqueue_script("contact-js", get_template_directory_uri() . "/assets/js/contact-wordpress.min.js", array("jquery"), filemtime(get_theme_file_path('/assets/js/contact-wordpress.min.js')), true);

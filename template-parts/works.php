@@ -1,4 +1,4 @@
-<section id="works" class="l-section l-first-view p-section wow fadeInUp">
+<section id="works" class="l-section l-first-view p-section js-first-view">
 	<div class="l-inner">
 		<hgroup class="p-section__title">
 			<h2 class="p-section__title--main">Works</h2>
@@ -19,7 +19,7 @@
 			if ($work_query->have_posts()) :
 				while ($work_query->have_posts()) : $work_query->the_post(); ?>
 
-					<li class="swiper-slide">
+					<li class="swiper-slide p-works-slider js-slider">
 						<?php if (has_post_thumbnail()) : ?>
 							<div class="p-works__img c-img js-modal__btn--open">
 								<?php the_post_thumbnail(); ?>
@@ -70,9 +70,9 @@
 			endif; ?>
 
 			</ul>
-			<div class="swiper-button-prev"></div>
-			<div class="swiper-button-next"></div>
-			<div class="swiper-pagination"></div>
+			<div class="swiper-button-prev js-button-prev"></div>
+			<div class="swiper-button-next js-button-next"></div>
+			<div class="swiper-pagination js-pagination"></div>
 
 			<div class="p-works__explanation">
 				<p>Basic認証を設定しております。<br />ユーザー名・パスワードともに<strong>『demo』</strong>となります。</p>
