@@ -1,4 +1,4 @@
-<section id="skills" class="l-section p-section wow fadeInUp">
+<section id="skills" class="l-section p-section js-skills">
 	<div class="l-inner">
 		<hgroup class="p-section__title">
 			<h2 class="p-section__title--main">Skills</h2>
