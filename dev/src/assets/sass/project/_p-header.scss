@@ -14,7 +14,10 @@
   place-items: center;
   padding: 0.5em 1em;
   letter-spacing: 0.12em;
-  font-size: size-calc-clamp(20, 30, 375, 1440);
+  font-size: size-calc-clamp(16, 30, 375, 1440);
+  @include mq(sp) {
+    line-height: 1.2;
+  }
   @media (hover: hover) {
     &:hover {
       opacity: 0.8;

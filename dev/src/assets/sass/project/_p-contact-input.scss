@@ -17,6 +17,7 @@ textarea {
   width: 100%;
   padding: 14px 15px;
   font-family: inherit;
+  font-weight: bold;
   color: var(--font);
   text-align: left;
   &::placeholder {
@@ -27,6 +28,9 @@ textarea {
   &:focus,
   &:active {
     border-color: var(--main);
+  }
+  @include mq(sp) {
+    padding: 10px;
   }
 }
 // textareaは高さ方向の設定も必要

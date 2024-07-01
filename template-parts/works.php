@@ -75,7 +75,7 @@
 			<div class="swiper-pagination js-pagination"></div>
 
 			<div class="p-works__explanation js-explanation">
-				<p>Basic認証を設定しております。<br />ユーザー名・パスワードともに<strong>『demo』</strong>となります。</p>
+				<p>Basic認証を設定しております。<br />ユーザー名・パスワードともに『demo』となります。</p>
 			</div>
 		</div>
 	</div>

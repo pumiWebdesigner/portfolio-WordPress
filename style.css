@@ -40,7 +40,7 @@ Description: WEBコーダーpumiのポートフォリオサイトです。
 	--width-tab-comp: 768px;
 	--width-sp-comp: 375px;
 	--height-pc-header: 104px;
-	--height-sp-header: 80px;
+	--height-sp-header: 60px;
 	--height-pc-footer: 80px;
 	--height-sp-footer: 70px;
 	--padding-pc-comp: 130;
@@ -486,7 +486,7 @@ html {
 
 body {
 	color: var(--font);
-	font-family: "Oswald", "Noto Sans JP", sans-serif;
+	font-family: "Noto Sans JP", sans-serif;
 	font-style: normal;
 	font-weight: 500;
 }
@@ -643,19 +643,18 @@ a {
 
 .l-section {
 	min-height: 300px;
-	padding-bottom: clamp(40px, 40px + 40 * (100vw - 375px) / 1065, 80px);
-	padding-top: clamp(30px, 30px + 30 * (100vw - 375px) / 1065, 60px);
+	padding-bottom: clamp(30px, 30px + 50 * (100vw - 375px) / 1065, 80px);
+	padding-top: clamp(20px, 20px + 40 * (100vw - 375px) / 1065, 60px);
 }
 
 .c-hamburger-btn {
 	background-color: transparent;
 	border: none;
 	display: block;
-	height: 70px;
-	padding: 0.5em;
+	height: 44px;
 	position: relative;
 	transition: 0.5s;
-	width: calc(40px + 1em);
+	width: 40px;
 }
 
 .c-hamburger-btn::after {
@@ -663,10 +662,10 @@ a {
 	color: white;
 	content: "MENU";
 	font-family: "Roboto Mono", monospace;
-	font-size: 12px;
+	font-size: 11px;
 	font-weight: 500;
 	left: 50%;
-	line-height: 22px;
+	line-height: 1;
 	position: absolute;
 	transform: translateX(-50%);
 }
@@ -684,24 +683,24 @@ a {
 	position: absolute;
 	transform: translateX(-50%);
 	transition: 0.3s;
-	width: 40px;
+	width: 34px;
 }
 
 .c-hamburger-bar:nth-child(1) {
-	top: calc(14px * 1);
+	top: calc(4px + 10px * (1 - 1));
 }
 
 .c-hamburger-bar:nth-child(2) {
-	top: calc(14px * 2);
+	top: calc(4px + 10px * (2 - 1));
 }
 
 .c-hamburger-bar:nth-child(3) {
-	top: calc(14px * 3);
+	top: calc(4px + 10px * (3 - 1));
 }
 
 .drawer-open .c-hamburger-bar {
-	top: 28px;
-	width: 48px;
+	top: 14px;
+	width: 40px;
 }
 
 .drawer-open .c-hamburger-bar:nth-child(1) {
@@ -753,7 +752,7 @@ a {
 	border-radius: 40px;
 	box-shadow: 0px 4px 0px 0px currentColor;
 	color: var(--font);
-	font-family: "Oswald", "Noto Sans JP", sans-serif;
+	font-family: "Noto Sans JP", sans-serif;
 	font-size: 20px;
 	font-weight: 700;
 	padding: 4px 22px 6px;
@@ -786,7 +785,7 @@ a {
 
 .p-header__logo {
 	display: grid;
-	font-size: clamp(20px, 20px + 10 * (100vw - 375px) / 1065, 30px);
+	font-size: clamp(16px, 16px + 14 * (100vw - 375px) / 1065, 30px);
 	letter-spacing: 0.12em;
 	padding: 0.5em 1em;
 	place-items: center;
@@ -946,7 +945,6 @@ a {
 
 .p-section__title--main {
 	display: inline-block;
-	font-family: "Oswald", "Noto Sans JP", sans-serif;
 	font-size: clamp(25px, 25px + 25 * (100vw - 375px) / 1065, 50px);
 	font-weight: 500;
 	letter-spacing: 0.1em;
@@ -975,13 +973,13 @@ a {
 .p-section__title--sub {
 	display: block;
 	font-size: clamp(16px, 16px + 8 * (100vw - 375px) / 1065, 24px);
-	margin-top: clamp(5px, 5px + 5 * (100vw - 375px) / 1065, 10px);
+	margin-top: clamp(0px, 0px + 10 * (100vw - 375px) / 1065, 10px);
 }
 
 .p-section__contents {
 	background-color: var(--sub);
 	box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
-	margin-top: clamp(20px, 20px + 20 * (100vw - 375px) / 1065, 40px);
+	margin-top: clamp(10px, 10px + 30 * (100vw - 375px) / 1065, 40px);
 	padding: clamp(20px, 20px + 20 * (100vw - 375px) / 1065, 40px);
 }
 
@@ -1081,7 +1079,6 @@ a {
 
 .p-skills__text--title-sub {
 	font-size: clamp(12px, 12px + 6 * (100vw - 375px) / 1065, 18px);
-	margin-top: 0.5rem;
 	padding-left: 1.5rem;
 	position: relative;
 }
@@ -1233,7 +1230,7 @@ a {
 	align-items: center;
 	display: flex;
 	gap: clamp(10px, 10px + 50 * (100vw - 375px) / 1065, 60px);
-	padding-block: clamp(14px, 14px + 14 * (100vw - 375px) / 1065, 28px);
+	padding-block: clamp(13px, 13px + 15 * (100vw - 375px) / 1065, 28px);
 	text-align: left;
 }
 
@@ -1271,7 +1268,7 @@ a {
 .p-contact__form--radio-wrapper {
 	align-items: center;
 	display: flex;
-	gap: clamp(16px, 16px + 16 * (100vw - 375px) / 1065, 32px);
+	gap: clamp(10px, 10px + 22 * (100vw - 375px) / 1065, 32px);
 }
 
 .p-contact__form--item-privacy {
@@ -1301,8 +1298,7 @@ a {
 .p-contact__message--error {
 	background: #fff;
 	display: none; /* 最初は非表示 */
-	font-size: 24px;
-	margin-top: 2rem;
+	font-size: 1rem;
 	opacity: 0;
 	padding: 20px;
 	text-align: center;
@@ -1339,6 +1335,7 @@ textarea {
 	border-radius: 4px;
 	color: var(--font);
 	font-family: inherit;
+	font-weight: bold;
 	overflow: hidden;
 	padding: 14px 15px;
 	text-align: left;
@@ -1737,6 +1734,10 @@ strong.color-accent {
 	background: blue;
 }
 
+.p-header__logo {
+	line-height: 1.2;
+}
+
 .p-header__nav {
 	display: none;
 }
@@ -1775,7 +1776,15 @@ strong.color-accent {
 .p-contact__form--radio-wrapper {
 	align-items: revert;
 	flex-direction: column;
-	margin-top: 12px;
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+input[type=date],
+select,
+textarea {
+	padding: 10px;
 }
 
 textarea {
