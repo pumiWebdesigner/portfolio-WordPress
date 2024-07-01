@@ -1,0 +1,8 @@
+@use "../global" as *;
+
+.grecaptcha-badge {
+  bottom: 110px !important;
+  @include mq(sp) {
+    bottom: 90px !important;
+  }
+}
