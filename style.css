@@ -1631,7 +1631,6 @@ input[type=date].is-input::before {
 	left: 0;
 	position: fixed;
 	top: 0;
-	transition: all 1s;
 	width: 100vw;
 	z-index: 9999;
 }
@@ -1648,18 +1647,18 @@ input[type=date].is-input::before {
 
 .p-loading__text {
 	animation: move 2s linear infinite;
-	color: white;
 	font-size: 2rem;
 	height: 100px;
+	left: 0;
+	opacity: 0;
 	place-items: center;
 	position: absolute;
-	top: 50%;
+	top: 51%;
 	width: 100px;
 }
 
 .loaded {
 	opacity: 0;
-	visibility: hidden;
 }
 
 .u-separate {
@@ -1811,6 +1810,15 @@ input[type=date] {
 	background-position: right 9px center;
 }
 
+.p-loading__spiner {
+	height: 40px;
+	width: 40px;
+}
+
+.p-loading__text {
+	font-size: 1.2rem;
+}
+
 .u-separeta--header {
 	margin-top: var(--height-sp-header);
 }
@@ -1910,27 +1918,33 @@ input[type=date] {
 @keyframes move {
 
 0% {
+	color: white;
 	left: 0;
 	opacity: 0;
-	transform: rotate(90deg);
+}
+
+10% {
+	opacity: 1;
 }
 
 35% {
 	left: 40%;
 	opacity: 1;
-	transform: rotate(0deg);
 }
 
 65% {
 	left: 60%;
 	opacity: 1;
-	transform: rotate(0deg);
+}
+
+90% {
+	opacity: 1;
 }
 
 100% {
+	color: blue;
 	left: 100%;
 	opacity: 0;
-	transform: rotate(-90deg);
 }
 
 }
