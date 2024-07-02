@@ -2,8 +2,13 @@
 
 .p-to-top {
   position: fixed;
-  right: size-calc-clamp(20, 30, 375, 1440);
-  bottom: size-calc-clamp(20, 30, 375, 1440);
+  right: 3px;
+  bottom: 10px;
+  @include mq(sp) {
+    right: 10px;
+  }
+  // right: size-calc-clamp(20, 30, 375, 1440);
+  // bottom: size-calc-clamp(20, 30, 375, 1440);
   width: size-calc-clamp(50, 75, 375, 1440);
   height: size-calc-clamp(50, 75, 375, 1440);
   z-index: var(--layer-totop);
