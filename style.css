@@ -503,17 +503,6 @@ a {
 	display: inline-block;
 }
 
-.mask {
-	background-color: gray;
-	content: "";
-	inset: 0;
-	position: absolute;
-}
-
-.accent {
-	color: var(--accent);
-}
-
 *,
 *::before,
 *::after {
@@ -844,6 +833,7 @@ a {
 	padding-inline: 15px;
 	position: fixed;
 	right: -100%;
+	text-align: center;
 	top: var(--height-sp-header);
 	transition: 0.5s;
 	width: 100%;
@@ -852,7 +842,6 @@ a {
 
 .drawer-open .p-drawer__nav {
 	right: 0;
-	text-align: center;
 }
 
 .p-drawer__nav--item {
@@ -867,8 +856,7 @@ a {
 }
 
 .p-drawer__nav--link {
-	padding: 1em 1em;
-	padding: 1em;
+	padding: 0.75rem;
 	text-align: center;
 }
 
@@ -1142,7 +1130,7 @@ a {
 
 .swiper-button-prev::before,
 .swiper-button-next::before {
-	background-color: rgb(255, 255, 155);
+	background-color: var(--swip-btn-color, #ff9);
 	border-radius: 50%;
 	height: 100%;
 	opacity: 0.7;
@@ -1693,6 +1681,25 @@ input[type=date].is-input::before {
 	justify-content: center;
 }
 
+.mask {
+	background-color: gray;
+	content: "";
+	inset: 0;
+	position: absolute;
+}
+
+.accent {
+	color: var(--accent);
+}
+
+.display-inline-block {
+	display: inline-block;
+}
+
+strong.color-accent {
+	color: var(--accent);
+}
+
 .hover__underline--from-left {
 	background-image: linear-gradient(90deg, white, white);
 	background-position: left bottom; /* X軸の起点 Y軸の起点 */
@@ -1703,10 +1710,6 @@ input[type=date].is-input::before {
 
 .hover__underline--from-left:hover {
 	background-size: 100% 2px; /* 線の横幅を100%にする */
-}
-
-strong.color-accent {
-	color: var(--accent);
 }
 
 @media (768px <= width) {
@@ -1766,6 +1769,11 @@ strong.color-accent {
 .p-bg {
 	height: calc(100vh - var(--height-sp-header));
 	top: var(--height-sp-header);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+	width: 9%;
 }
 
 .swiper-button-prev {

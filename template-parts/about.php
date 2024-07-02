@@ -22,12 +22,13 @@
 						<div class="p-about__text--sub-message">
 						平　日：
 						<strong class="color-accent"> 4時間 </strong>
-						対応可能です（5:00〜7:00,19:00〜21:00）
+						対応可能です <div class="display-inline-block">（5:00〜7:00,19:00〜21:00）</div> 
 						</div>
 						<div class="p-about__text--sub-message">
 						土日祝：
 						<strong class="color-accent"> 8時間 </strong>
-						対応可能です（5:00〜10:00,18:00〜21:00）
+						対応可能です
+						<div class="display-inline-block">（5:00〜10:00,18:00〜21:00）</div>
 						</div>
 					</div>
 				</div>
