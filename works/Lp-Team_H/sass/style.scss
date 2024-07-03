@@ -72,6 +72,18 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+.top-section-ja-title {
+  @media screen and (max-width: 374px) {
+    font-size: 28px !important;
+  }
+}
+
+.sphidden {
+  @media screen and (max-width: 374px) {
+    display: none;
+  }
+}
+
 /*===============
  fv
 ================*/
@@ -116,34 +128,29 @@ body {
   font-size: 18px;
   font-weight: 700;
   line-height: 2; /* 200% */
-  bottom: 25px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 100;
 
-  @include mq(sp) {
-    top: 56%;
+  @media screen and (max-width: 479px) {
+    bottom: 4%;
+    font-size: clamp(16px, 16 / 375 * 100vw, 20px);
   }
 
-  @include mq(tb) {
-    bottom: 25px;
-    left: 30%;
-    transform: translateX(-50%);
-  }
-
-  @media screen and (min-width: 768px) {
-    bottom: 46%;
-  }
-
-  @media screen and (min-width: 1025px) {
-    font-size: 20px;
-    left: 32%;
-    bottom: 25px;
-  }
-
-  @media screen and (min-width: 1270px) {
-    left: 34%;
-    font-size: 32px;
+  @media screen and (min-width: 480px) {
+    left: 36%;
+    bottom: 10%;
+    font-size: clamp(14px, 20 / 660 * 100vw, 28px);
     line-height: 1.6;
+  }
+  @media screen and (min-width: 1024px) {
+    left: 26%;
+    font-size: clamp(14px, 26 / 1200 * 100vw, 32px);
+  }
+  @media screen and (min-width: 1300px) {
+    bottom: 4%;
+    left: 30%;
+    font-size: clamp(14px, 32 / 1300 * 100vw, 32px);
   }
 }
 
@@ -155,6 +162,12 @@ body {
     // margin-top: 30px;
     margin-inline: auto;
   }
+
+  @media screen and (max-width: 374px) {
+    padding: 0;
+    padding-top: 20px;
+  }
+
   .footer__atention {
     text-align: left;
     display: block;
@@ -193,7 +206,7 @@ body {
   @media screen and (min-width: 1024px) {
     margin-top: 100px;
   }
-  @media screen and (min-width: 1210px) {
+  @media screen and (min-width: 1240px) {
     margin-top: 22px;
   }
 }
@@ -322,7 +335,7 @@ body {
   //   left: 40px;
   //   width: 10px;
   //   height: 10px;
-  //   background: url(../img/btn-arrow.png) no-repeat center center / contain;
+  //   background: url(../img/btn-arrow.webp) no-repeat center center / contain;
   // }
   // &::after {
   //   position: absolute;
@@ -332,7 +345,7 @@ body {
   //   left: 40px;
   //   width: 10px;
   //   height: 10px;
-  //   background: url(../img/btn-arrow.png) no-repeat center center / contain;
+  //   background: url(../img/btn-arrow.webp) no-repeat center center / contain;
   // }
 }
 
@@ -545,7 +558,7 @@ body {
       left: -24px;
       width: 120px;
       height: 150px;
-      background: url(../img/greeting-deco-clover.png) no-repeat center center / contain;
+      background: url(../img/greeting-deco-clover.webp) no-repeat center center / contain;
     }
   }
 
@@ -556,7 +569,7 @@ body {
     right: -50px;
     width: 123px;
     height: 123px;
-    background: url(../img/greeting-deco-giraffe.png) no-repeat center center / contain;
+    background: url(../img/greeting-deco-giraffe.webp) no-repeat center center / contain;
     animation: swing 4s infinite ease-in-out;
 
     @include mq(sp-tb) {
@@ -597,7 +610,7 @@ body {
       left: -160px;
       width: 200px;
       height: 230px;
-      background: url(../img/greeting-deco-clover.png) no-repeat center center / contain;
+      background: url(../img/greeting-deco-clover.webp) no-repeat center center / contain;
     }
   }
 }
@@ -687,7 +700,7 @@ body {
   //   left: 40px;
   //   width: 10px;
   //   height: 10px;
-  //   background: url(../img/btn-arrow.png) no-repeat center center / contain;
+  //   background: url(../img/btn-arrow.webp) no-repeat center center / contain;
   // }
   // &::after {
   //   position: absolute;
@@ -697,7 +710,7 @@ body {
   //   left: 40px;
   //   width: 10px;
   //   height: 10px;
-  //   background: url(../img/btn-arrow.png) no-repeat center center / contain;
+  //   background: url(../img/btn-arrow.webp) no-repeat center center / contain;
   // }
 }
 
@@ -728,7 +741,7 @@ body {
       left: -15px;
       width: 242px;
       height: 300px;
-      background: url(../img/point-deco-tree.png) no-repeat center center / contain;
+      background: url(../img/point-deco-tree.webp) no-repeat center center / contain;
     }
   }
 }
@@ -754,7 +767,7 @@ body {
     bottom: -6px;
     width: 71px;
     height: 62px;
-    background: url(../img/point-deco-clover.png) no-repeat center center / contain;
+    background: url(../img/point-deco-clover.webp) no-repeat center center / contain;
     animation: swing-clover linear 5s infinite;
 
     @keyframes swing-clover {
@@ -876,16 +889,25 @@ body {
     content: "";
     width: 80px;
     height: 80px;
+
+    @media screen and (max-width: 374px) {
+      width: 70px;
+      height: 70px;
+    }
   }
 }
 
 .point-img1 {
   &::before {
-    background: url(../img/point-num1.png) no-repeat center center / contain;
+    background: url(../img/point-num1.webp) no-repeat center center / contain;
     top: -50px;
     left: 0;
     @include mq(sp) {
       left: -50px;
+
+      @media screen and (max-width: 374px) {
+        left: -36px;
+      }
     }
 
     @include mq(pc) {
@@ -898,7 +920,7 @@ body {
   &::before {
     top: -50px;
     left: 0;
-    background: url(../img/point-num2.png) no-repeat center center / contain;
+    background: url(../img/point-num2.webp) no-repeat center center / contain;
 
     @include mq(sp) {
       left: -50px;
@@ -906,12 +928,16 @@ body {
     @include mq(tb) {
       left: -40px;
     }
+
+    @media screen and (max-width: 374px) {
+      left: -25px;
+    }
   }
 }
 
 .point-img3 {
   &::before {
-    background: url(../img/point-num3.png) no-repeat center center / contain;
+    background: url(../img/point-num3.webp) no-repeat center center / contain;
     left: 0;
     top: -46px;
 
@@ -923,12 +949,15 @@ body {
       top: -40px;
       left: -30px;
     }
+    @media screen and (max-width: 374px) {
+      left: -12px;
+    }
   }
 }
 
 .point-img4 {
   &::before {
-    background: url(../img/point-num4.png) no-repeat center center / contain;
+    background: url(../img/point-num4.webp) no-repeat center center / contain;
     left: 0;
     top: -36px;
 
@@ -944,12 +973,15 @@ body {
       top: 0;
       left: -60px;
     }
+    @media screen and (max-width: 374px) {
+      left: -15px;
+    }
   }
 }
 
 .point-img5 {
   &::before {
-    background: url(../img/point-num5.png) no-repeat center center / contain;
+    background: url(../img/point-num5.webp) no-repeat center center / contain;
     left: 0;
     top: -36px;
 
@@ -965,6 +997,9 @@ body {
       top: 0;
       left: -80px;
     }
+    @media screen and (max-width: 374px) {
+      left: -19px;
+    }
   }
 }
 
@@ -975,11 +1010,14 @@ body {
   line-height: 2;
   margin-top: 14px;
   position: relative;
+  @media screen and (max-width: 374px) {
+    white-space: nowrap;
+  }
 
   &::before {
     position: absolute;
     content: "";
-    background: url(../img/point-wave-deco.png) repeat center center / contain;
+    background: url(../img/point-wave-deco.webp) repeat center center / contain;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -1069,10 +1107,13 @@ body {
   font-family: "001Shirokuma";
   @include font(36, 400, 33.91, null);
 }
+.access__narrow-spacing {
+  letter-spacing: -0.2em;
+}
 .--clover-left {
   &::before {
     content: "";
-    background: url(../img/ico_headding_clover@2x.png) no-repeat center/contain;
+    background: url(../img/ico_headding_clover@2x.webp) no-repeat center/contain;
     position: absolute;
     top: 50%;
     right: calc(100% + 10px);
@@ -1168,7 +1209,7 @@ body {
   &::before {
     content: "";
     position: absolute;
-    background: url("../img/bg_footer_grass@2x.png") no-repeat center center / contain;
+    background: url("../img/bg_footer_grass@2x.webp") no-repeat center center / contain;
     width: 100%;
     aspect-ratio: 160/33;
     bottom: max(-41px, calc(3vw * -1));
@@ -1258,6 +1299,9 @@ body {
             padding-left: 23px;
             @media screen and (max-width: 1080px) {
               font-size: 14px;
+            }
+            @media screen and (max-width: 374px) {
+              padding-left: 8px;
             }
           }
         }

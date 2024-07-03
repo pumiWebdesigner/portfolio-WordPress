@@ -14,7 +14,7 @@
 }
 
 .post {
-  background: transparent url(../img/bg.png) no-repeat top center / contain;
+  background: transparent url(../img/bg.webp) no-repeat top center / contain;
   position: relative;
   padding-top: 88px;
   padding-bottom: 108px;
@@ -28,7 +28,7 @@
 .post__inner {
   max-width: 1000px;
   margin-inline: auto;
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1024px) {
     padding-inline: 20px;
   }
 }
@@ -49,14 +49,16 @@
   justify-content: center;
   margin-top: 76px;
   gap: 31px;
-  @media screen and (max-width: 1000px) {
+  flex-wrap: wrap;
+  @media screen and (max-width: 1024px) {
     flex-direction: column;
     align-items: center;
   }
 }
 .post__articles {
   width: 702px;
-  @media screen and (max-width: 1000px) {
+  order: 1;
+  @media screen and (max-width: 1024px) {
     margin-inline: auto;
   }
   @media screen and (max-width: 767px) {
@@ -107,7 +109,6 @@
   margin-top: 1px;
 }
 .post__article--description {
-  width: 300px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -126,15 +127,17 @@
 .post__archives {
   width: 267px;
   margin-top: 1px;
-  @media screen and (max-width: 1000px) {
+  order: 2;
+  @media screen and (max-width: 1024px) {
     margin-top: 30px;
     width: 100%;
+    order: 3;
   }
 }
 .post__archives--articles {
   display: flex;
   flex-direction: column;
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1024px) {
     flex-direction: row;
     justify-content: center;
     gap: 50px;
@@ -170,13 +173,18 @@
   @media screen and (max-width: 767px) {
     margin-left: 0;
   }
+  @media (hover: hover) {
+    &:hover {
+      opacity: 0.7;
+    }
+  }
 }
 
 .post__monthly-archive {
   margin-top: 82px;
   font-size: 16px;
   line-height: 200%;
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1024px) {
     margin-top: 0;
   }
 }
@@ -203,6 +211,11 @@
   @media screen and (max-width: 767px) {
     margin-left: 0;
   }
+  @media (hover: hover) {
+    &:hover {
+      opacity: 0.7;
+    }
+  }
 }
 
 .post__search-box {
@@ -211,7 +224,7 @@
   margin-top: 60px;
   width: 100%;
   padding: 16px 20px;
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1024px) {
     width: 300px;
     margin-inline: auto;
   }
@@ -247,7 +260,12 @@
   }
 }
 .post__pagenation {
-  margin-top: 73px;
+  width: 100%;
+  margin-top: 33px;
+  order: 3;
+  @media screen and (max-width: 1024px) {
+    order: 2;
+  }
 }
 
 .post__pagenation--wrapper {
@@ -263,7 +281,7 @@
   padding: 14px 18px;
   &.is-current {
     color: #fff;
-    padding-inline: 34px;
+    padding-inline: 22px;
     position: relative;
     &::after {
       position: absolute;
@@ -278,6 +296,11 @@
       z-index: -1;
     }
   }
+  @media (hover: hover) {
+    &:hover {
+      opacity: 0.7;
+    }
+  }
 }
 .post__pagenation--arrow {
   padding: 7px 16px 11px;
@@ -288,15 +311,16 @@
 }
 
 .breadcrumb-list {
-  margin-top: 81px;
-  margin-top: 85px;
-  width: 99px;
+  // margin-top: 81px;
+  // margin-top: 85px;
+  margin-top: 82px;
+  // width: 99px;
   height: 22px;
   display: flex;
   align-items: center;
   margin-left: 2px;
   margin-left: -1px;
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1024px) {
     margin-top: 30px;
   }
 }
@@ -313,15 +337,128 @@
   line-height: 22px; /* 157.143% */
   padding-left: 19px;
   position: relative;
+  display: inline-block;
   &::after {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left: 6px;
-    background: url("../img/breadcrumb-list-arrow.png");
+    background: url("../img/breadcrumb-list-arrow.webp");
     width: 6px;
     height: 8px;
     content: "";
     margin-top: -1px;
+  }
+}
+
+.blog-page {
+  background: transparent url(../img/bg.webp) no-repeat top center / contain;
+  position: relative;
+  padding-top: 88px;
+  padding-bottom: 71px;
+  margin-top: 172px;
+  @media screen and (max-width: 1024px) {
+    margin-top: 111px;
+    padding-bottom: 80px;
+  }
+}
+.blog-page__wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 76px;
+  margin-top: 91px;
+  gap: 20px;
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.blog-page__articles {
+}
+
+.blog-page__article {
+  border-top: 4px solid #f28119;
+  background: #fff;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+  padding: 35px 40px 40px 39px;
+}
+
+.blog-page__article--title {
+  padding-left: 44px;
+  position: relative;
+  color: #5b4c38;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 38px; /* 158.333% */
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-55%);
+    width: 34px;
+    height: 32px;
+    background: url("../../img/blog-page-clover.webp") no-repeat center / contain;
+    animation: swing-clover-blog linear 5s infinite;
+  }
+}
+
+.blog-page__article--time {
+  margin-top: 27px;
+  padding-left: 24px;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 16px;
+    height: 16px;
+    background: url("../img/blog-page-time.svg") no-repeat center / contain;
+  }
+}
+
+.blog-page__article--text {
+  margin-top: 22px;
+  color: #5b4c38;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 32px; /* 200% */
+}
+
+.blog-page__article--img {
+  margin-top: 26px;
+  text-align: center;
+}
+
+.post__archives.blog-page__archives {
+  margin-top: -11px;
+  @media screen and (max-width: 1024px) {
+    margin-top: 60px;
+  }
+}
+.blog-page__to-back {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.blog-page__to-back--link {
+  color: #5b4c38;
+  text-align: center;
+  font-family: "Zen Kaku Gothic New";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 12px; /* 75% */
+  letter-spacing: 0.64px;
+  display: inline-block;
+  padding: 7px 10px;
+  border-bottom: 1px solid #bbb6b6;
+  @media (hover: hover) {
+    &:hover {
+      opacity: 0.7;
+    }
   }
 }
