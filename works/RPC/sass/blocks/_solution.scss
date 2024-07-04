@@ -78,7 +78,8 @@
   bottom: -80px;
   left: 50%;
   transform: translateX(-50%);
-  width: calc(1115px / 1440px * 100%);
+  // width: calc(1115px / 1440px * 100%);
+  width: 1115px;
   // height: 96px;
   color: var(--White, #fff);
   @include font(24, 700, 36, 0.96);
@@ -90,7 +91,7 @@
   &::after {
     content: "";
     position: absolute;
-    width: calc(1180px / 1115px * 100%);
+    width: 1180px;
     height: 121px;
     // top: 20px;
     // left: 50%;
@@ -100,7 +101,7 @@
     // transform: translateX(-50%);
     background: url(../img/solution/hukidasi.svg) center / cover no-repeat;
   }
-  @include mq(tab) {
+  @media screen and (max-width: 1200px) {
     @include font(20, 700, 30, 0.8);
     padding: 30px 23px;
     width: 308px;
@@ -115,19 +116,20 @@
       background: url(../img/solution/hukidasi-sp.svg) center / cover no-repeat;
     }
   }
-  @include mq(sp) {
-    @include font(20, 700, 30, 0.8);
-    padding: 30px 23px;
-    width: 308px;
-    height: 180px;
-    bottom: -124px;
-    &::after {
-      width: 300px;
-      height: 237px;
-      bottom: -70px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: url(../img/solution/hukidasi-sp.svg) center / contain no-repeat;
-    }
-  }
+
+  // @include mq(sp) {
+  //   @include font(20, 700, 30, 0.8);
+  //   padding: 30px 23px;
+  //   width: 308px;
+  //   height: 180px;
+  //   bottom: -124px;
+  //   &::after {
+  //     width: 300px;
+  //     height: 237px;
+  //     bottom: -70px;
+  //     left: 50%;
+  //     transform: translateX(-50%);
+  //     background: url(../img/solution/hukidasi-sp.svg) center / contain no-repeat;
+  //   }
+  // }
 }

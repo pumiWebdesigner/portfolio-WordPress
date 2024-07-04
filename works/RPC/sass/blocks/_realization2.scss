@@ -4,6 +4,12 @@
 .realization2 {
   padding-top: 140px;
   padding-bottom: 107px;
+  @media screen and (max-width: 1200px) {
+    padding-top: 210px;
+  }
+  @media screen and (max-width: 1000px) {
+    padding-top: 140px;
+  }
   @include mq(sp) {
     padding-top: 240px;
     padding-bottom: 56px;

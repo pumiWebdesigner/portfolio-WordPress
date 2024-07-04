@@ -1692,7 +1692,7 @@ th {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  width: 77.4305555556%;
+  width: 1115px;
   color: var(--White, #fff);
   font-size: 1.5rem;
   font-weight: 700;
@@ -1705,14 +1705,14 @@ th {
 .solution__label::after {
   content: "";
   position: absolute;
-  width: 105.8295964126%;
+  width: 1180px;
   height: 121px;
   position: absolute;
   right: -33.5px;
   bottom: -34px;
   background: url(../img/solution/hukidasi.svg) center/cover no-repeat;
 }
-@media (768px <= width <= 1023px) {
+@media screen and (max-width: 1200px) {
   .solution__label {
     font-size: 1.25rem;
     font-weight: 700;
@@ -1733,31 +1733,20 @@ th {
     background: url(../img/solution/hukidasi-sp.svg) center/cover no-repeat;
   }
 }
-@media (width <= 767px) {
-  .solution__label {
-    font-size: 1.25rem;
-    font-weight: 700;
-    line-height: 1.5;
-    letter-spacing: 0.04em;
-    padding: 30px 23px;
-    width: 308px;
-    height: 180px;
-    bottom: -124px;
-  }
-  .solution__label::after {
-    width: 300px;
-    height: 237px;
-    bottom: -70px;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-    background: url(../img/solution/hukidasi-sp.svg) center/contain no-repeat;
-  }
-}
 
 .realization2 {
   padding-top: 140px;
   padding-bottom: 107px;
+}
+@media screen and (max-width: 1200px) {
+  .realization2 {
+    padding-top: 210px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .realization2 {
+    padding-top: 140px;
+  }
 }
 @media (width <= 767px) {
   .realization2 {
